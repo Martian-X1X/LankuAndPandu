@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Bootstrap CSS -->
+    <link rel="apple-touch-icon" sizes="180x180" href="LP/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="LP/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="LP/favicon-16x16.png">
+    <link rel="manifest" href="LP/site.webmanifest">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: url(imgs/lock.jpg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2 class="text-center mb-4">Login</h2>
+    <form id="loginForm" onsubmit="return validateForm()">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+    </form>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    function validateForm() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        // Replace these values with your actual username and password
+        var validUsername = "Nayla";
+        var validPassword = "123";
+
+        if (username === validUsername && password === validPassword) {
+            alert("Login successful!");
+            window.location.href = "anni.html"; // Redirect to anni.html
+            return false; // Prevent form submission (you can remove this line if you want the form to submit)
+        } else {
+            alert("Invalid username or password. Please try again.");
+            return false;
+        }
+    }
+</script>
+
+</body>
+</html>

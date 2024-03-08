@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Our TimeLine</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="LP/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="LP/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="LP/favicon-16x16.png">
+  <link rel="manifest" href="LP/site.webmanifest">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+      background: url('imgs/zoom_heart.gif') center center fixed; 
+      background-size: cover;
+    }
+    
+    body {
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .swiper-container-wrapper--timeline .swiper-slide {
+      display: flex;
+      background: #000000;
+      min-height: 300px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+    }
+    
+    .swiper-container-wrapper--timeline .swiper-slide .container {
+      padding: 0;
+      width: 100%;
+    }
+    
+    .swiper-container-wrapper--timeline .swiper-slide .title {
+        font-size: 18px;
+        opacity: 0;
+        transform: translateY(-50%); /* Add this line to move the title down */
+        transition: opacity 0.5s ease, transform 0.5s ease 0.5s; /* Modify transition property */
+        position: absolute;
+        top: 20px; /* Adjust the top value as needed */
+        left: 40%;
+    }
+
+      
+      .swiper-container-wrapper--timeline .swiper-slide--active .title {
+        opacity: 1;
+        top: 50%;
+        transform: translateY(-50%); /* Add this line to reset the title position */
+      }
+
+          /* Add this style to adjust the spacing between the title and content row */
+    .swiper-container-wrapper--timeline .swiper-slide .content {
+        margin-top: 70px;
+      }
+    
+    .swiper-container-wrapper--timeline .swiper-pagination-progressbar {
+      position: relative;
+      margin-bottom: 70px;
+      background-color: transparent;
+      height: 4px;
+      border-bottom: 1px solid #616161; /* Replace with your secondary color value */
+      width: 75%;
+    }
+    
+    .swiper-container-wrapper--timeline .swiper-pagination-progressbar-fill {
+      background-color: #ffa600; /* Replace with your primary color value */
+      height: 3px;
+      top: 2px;
+    }
+    
+    .swiper-container-wrapper--timeline .swiper-pagination-progressbar:before {
+      position: absolute;
+      top: 2px;
+      left: -100%;
+      width: 100%;
+      height: 3px;
+      background-color: #ff0000; /* Replace with your primary color value */
+      content: "";
+    }
+    
+    .swiper-container-wrapper--timeline .swiper-pagination-progressbar:after {
+      position: absolute;
+      top: 3px;
+      right: -100%;
+      width: 100%;
+      height: 1px;
+      background-color: #1eff00; /* Replace with your secondary color value */
+      content: "";
+    }
+    
+    .swiper-container-wrapper--timeline .swiper-pagination-custom {
+      position: relative;
+      list-style: none;
+      margin: 1rem 0;
+      padding: 0;
+      display: flex;
+      line-height: 1.66;
+      bottom: 0;
+      z-index: 11;
+      width: 75%;
+      display: flex;
+    }
+    
+    .swiper-container-wrapper--timeline .swiper-pagination-custom .swiper-pagination-switch {
+      position: relative;
+      width: 100%;
+      height: 30px;
+      line-height: 30px;
+      display: block;
+    }
+    
+    .swiper-container-wrapper--timeline .swiper-pagination-custom .swiper-pagination-switch .switch-title {
+      position: absolute;
+      font-weight: 400;
+      right: 0;
+      transform: translateX(50%);
+      transition: 0.2s all ease-in-out;
+      transition-delay: 0s;
+      cursor: pointer;
+      z-index: 1;
+    }
+    
+    .swiper-container-wrapper--timeline .swiper-pagination-custom .swiper-pagination-switch.active .switch-title {
+      font-weight: 400;
+      transition-delay: 0.4s;
+    }
+    
+    .swiper-container-wrapper--timeline .swiper-pagination-custom .swiper-pagination-switch.active .switch-title:after {
+      position: absolute;
+      top: calc(100% + 19px);
+      right: 50%;
+      transform: translateX(50%) translateY(-50%);
+      width: 12px;
+      height: 12px;
+      background: #000; /* Replace with your primary color value */
+      border-radius: 2rem;
+      content: "";
+      transition: 0.2s all ease-in-out;
+      transition-delay: 0s;
+      z-index: 1;
+    }
+    
+
+    .swiper-container-wrapper--timeline .swiper-pagination-custom .swiper-pagination-switch.active ~ .swiper-pagination-switch .switch-title {
+        color: #ffa600; /* Replace with your secondary color value */
+        font-weight: bolder;
+        background-color: #000000;
+      }
+    
+    .swiper-container-wrapper--timeline .swiper-pagination-custom .swiper-pagination-switch.active ~ .swiper-pagination-switch .switch-title:after {
+      background: #888; /* Replace with your secondary color value */
+    }
+    .swiper-slide .title {
+        color: #ff5100;
+        background-color: #2c2c2c;
+        font-size: 50rem;
+
+    }
+/* Using Fraunces font for paragraph text */
+.swiper-slide .content p {
+    color: rgb(255, 81, 0);
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+}
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="swiper-container-wrapper swiper-container-wrapper--timeline">
+      <!-- Timeline -->
+      <ul class="swiper-pagination-custom">
+        <li class='swiper-pagination-switch first active'><span class='switch-title'>2020</span></li>
+        <li class='swiper-pagination-switch'><span class='switch-title'>2021</span></li>
+        <li class='swiper-pagination-switch'><span class='switch-title'>2022</span></li>
+        <li class='swiper-pagination-switch last'><span class='switch-title'>2023</span></li>
+      </ul>
+      <!-- Progressbar -->
+      <div class="swiper-pagination swiper-pagination-progressbar swiper-pagination-horizontal"></div>
+      <!-- Swiper -->
+      <div class="swiper swiper-container swiper-container--timeline">
+        <div class="swiper-wrapper">
+<!-- Slide 1 -->
+<div class="swiper-slide">
+    <span class="title">The Beginning</span>
+    <div class="content row">
+      <!-- Bootstrap grid for images and paragraphs -->
+      <div class="col-md-4 mb-4 order-md-1 order-2 text-center">
+        <img src="imgs/2020_1st.jpg" class="img-fluid rounded" alt="Image 1" style="width: 300px; height: 200px;">
+      </div>
+      <div class="col-md-8 order-md-2 order-1 text-center">
+        <p>"As we sat across from each other on that first date, little did we know that our laughter would turn into whispers of love, and our casual conversations would carve a new story. From friends to something more, our journey began with smiles and subtle glances, where this friendship took a leap and transformed into a love story written in the stars."</p>
+      </div>
+      <div class="col-md-4 mb-4 order-md-3 order-4 text-center">
+        <img src="imgs/2020_2nd.jpg" class="img-fluid rounded" alt="Image 2" style="width: 300px; height: 200px;">
+      </div>
+      <div class="col-md-8 order-md-4 order-3 text-center">
+        <p>As we sat hand in hand, your eyes spoke volumes, whispering the words your heart couldn't contain. In that moment, surrounded by gentle winds and fine evening sunset, you painted our world with the colors of your love, and I found myself lost in the melody of your affection. Here's to that magical moment on our first official date, where your words wrapped around my soul like a warm embrace, forever marking the beginning of our beautiful journey together.</p>
+      </div>
+      <div class="col-md-4 mb-4 order-md-5 order-6 text-center">
+        <img src="imgs/2020_3rd.jpg" class="img-fluid rounded" alt="Image 3" style="width: 300px; height: 300px;">
+      </div>
+      <div class="col-md-8 order-md-6 order-5 text-center">
+        <p>On every special day, your excitement becomes the secret ingredient that turns moments into memories. Your joy is the spark that lights up the celebration, and with each shared smile, we create a treasure trove of happiness. Here's to the one who turns ordinary days into extraordinary adventures, infusing every special occasion with the magic of your enthusiasm</p>
+      </div>
+    </div>
+  </div>
+  
+
+          
+<!-- Slide 2 -->
+<div class="swiper-slide">
+    <span class="title">An Year After</span>
+    <div class="content row">
+      <!-- Bootstrap grid for images and paragraphs -->
+      <div class="col-md-8 text-center order-md-1 order-2">
+        <p>No matter the storms that may brew or the shadows that may linger, I want you to know that I'll be there by your side, holding an umbrella of love and a flashlight of unwavering support. In your worst days, I'll be your strongest pillar, because being with you isn't just about sharing the sunny moments; it's about weathering the storms together and proving that love shines brightest in the darkest hours. ALWAYS YOUR LISTNER AND STRESS ABSORBER.</p>
+      </div>
+      <div class="col-md-4 mb-4 order-md-2 order-1 text-center">
+        <img src="imgs/2021_1st.jpg" class="img-fluid rounded" alt="Image 1" style="width: 300px; height: 200px;">
+      </div>
+  
+      <div class="col-md-8 text-center order-md-3 order-4">
+        <p>Let's drench in the rain, hand in hand, as each raindrop becomes a note in our symphony of lov,creating a mosaic of memories filled with laughter and warmth. From loving you to being loved by your fvrt People i feel blessed and confident about our journey. The love they give me is beyound 7th skies and all i can say is May Allah bless them With Happiness they always desserved.</p>
+      </div>
+      <div class="col-md-4 mb-4 order-md-4 order-3 text-center">
+        <img src="imgs/2021_2nd.png" class="img-fluid rounded" alt="Image 2" style="width: 300px; height: 300px;">
+      </div>
+      
+      <div class="col-md-8 text-center order-md-5 order-6">
+        <p>In your belief, I found wings to soar; in your support, a fortress of strength. You've not only held my hand through life's journey but also molded me into someone who faces challenges with confidence and grace. Your unwavering faith in me has been the wind beneath my wings, lifting me higher. In the dance of life's highs and lows, you're not just a partner but a steady anchor. Together, we've weathered storms and reveled in the sunshine, standing side by side in a beautiful symphony of support. Thank you for being my rock, my cheerleader, and my constant in this incredible journey we call 'us'.</p>
+      </div>
+      <div class="col-md-4 mb-4 order-md-6 order-5 text-center">
+        <img src="imgs/2021_3rd.png" class="img-fluid rounded" alt="Image 3" style="width: 300px; height: 300px;">
+      </div>
+    </div>
+  </div>
+  
+  
+<!-- Slide 3 -->
+<div class="swiper-slide">
+    <span class="title">Time is Flying</span>
+    <div class="content row">
+      <!-- Bootstrap grid for images and paragraphs -->
+      <div class="col-md-4 mb-4 order-md-1 order-2 text-center">
+        <img src="imgs/2022_1st.png" class="img-fluid rounded" alt="Image 3" style="width: 300px; height: 300px;">
+      </div>
+      <div class="col-md-8 order-md-2 order-1 text-center">
+        <p>From concerts echoing with melodies to trips brimming with adventure, our journey together has been a symphony of shared experiences and boundless laughter. Every beat of the music, every step of the way, we've linked our lives, crafting memories that sparkle with the magic of togetherness. And as we look ahead, our hearts brim with excitement, for the road ahead is adorned with countless destinations waiting to be explored, and our souls are eager to embark on new adventures hand in hand.</p>
+      </div>
+  
+      <div class="col-md-4 mb-4 order-md-3 order-4 text-center">
+        <img src="imgs/2022_2nd.jpg" class="img-fluid rounded" alt="Image 3" style="width: 300px; height: 250px;">
+      </div>
+      <div class="col-md-8 order-md-4 order-3 text-center">
+        <p>In the chaos of our shared craziness and the canvas of our creativity, every burst of laughter becomes a stroke in the masterpiece of our love story. Together, we've turned ordinary moments into extraordinary memories, creating a collage of joy and Peace. In the symphony of our shared giggles and the dance of our wild ideas, I find the sweetest melody. Here's to being wonderfully crazy and beautifully creative, forever wrapped up in each other's laughter, as we continue to paint the canvas of our lives with the hues of love and endless laughter.</p>
+      </div>
+      
+      <div class="col-md-4 mb-4 order-md-5 order-6 text-center">
+        <img src="imgs/2022_3rd.jpg" class="img-fluid rounded" alt="Image 3" style="width: 300px; height: 200px;">
+      </div>
+      <div class="col-md-8 order-md-6 order-5 text-center">
+        <p>In the simplicity of our love story, we find magic in every stroll and warmth in every tea date and comfort in ice cream walks. It's not about the grand gestures or elaborate plans, but the quiet moments we share while walking hand in hand. These simple, unassuming moments are the threads that weave the fabric of our connection. Here's to the beauty of  our uncomplicated relation, where every step and every sip, every thought is a chapter in our book of cherished memories, written in the language of love.</p>
+      </div>
+    </div>
+</div>
+
+  
+<!-- Slide 4 -->
+<div class="swiper-slide">
+    <span class="title">Wow We Are Progressing</span>
+    <div class="content row">
+        <!-- Bootstrap grid for images and paragraphs -->
+        <div class="col-md-8 text-center order-md-1 order-2">
+            <p>Though our paths may lead us far across distant horizons, our hearts remain tethered by an invisible thread of love. No matter the miles that stretch between us, our connection transcends the boundaries of space. Like two stars in the night sky, shining individually yet sharing the same cosmic canvas, our hearts beat in harmony, a testament to the enduring magic of our love. So, as we navigate the distances, know that my love for you only grows stronger, bridging any gap with the whispers of our connected hearts.</p>
+        </div>
+        <div class="col-md-4 mb-4 order-md-2 order-1 text-center">
+            <img src="imgs/2023_1st.png" class="img-fluid rounded" alt="Image 4" style="width: 300px; height: 300px;">
+        </div>
+  
+        <div class="col-md-8 text-center order-md-3 order-4">
+            <p>In the echoes of my hardest times, your love was a gentle whisper that guided me through the darkness. Even when miles apart, you gave pieces of your heart to stitch mine back together. Your prayers were the lullabies that cradled my restless soul, and your unwavering love was the anchor that kept me grounded. In the dark box trapped with adversity, your love became the light that shined resilience into my spirit. With you by my side, love transformed hardship into a journey of healing, and your boundless affection was the key to unlocking a healthier, happier chapter in my life. Thank you for being the love that mends, the strength that uplifts, and the light that leads me home. AND YOU ARE MY HOME.</p>
+        </div>
+        <div class="col-md-4 mb-4 order-md-4 order-3 text-center">
+            <img src="imgs/2023_2nd.png" class="img-fluid rounded" alt="Image 4" style="width: 300px; height: 300px;">
+        </div>
+        
+        <div class="col-md-8 text-center order-md-5 order-6">
+            <p>In the reflection of her eyes, I found a beauty that went beyond the surface, captivating not just my gaze but also the depths of my heart. Her physical allure, an enchanting symphony, is merely a prelude to the true masterpiece – the beauty within. Every glance reveals the kindness in her soul, and with each passing moment, my love for her deepens, defying the limits of what words can express. It's not just about the way she looks; it's about the way she makes my heart feel. Her beauty is an irresistible force, holding me captive, as my eyes linger, unable to escape the gravitational pull of a love that grows stronger with each heartbeat. "BAAR BAAR DEKHTE CHAI HAJR BAR DEKHBO JOTO DEKHBO TOTO DEKTE ICCHE KORE DEKHBO AMI SHUDHU TOMAKEI"</p>
+        </div>
+        <div class="col-md-4 mb-4 order-md-6 order-5 text-center">
+            <img src="imgs/2023_3rd.png" class="img-fluid rounded" alt="Image 4" style="width: 300px; height: 300px;">
+        </div>
+        <div class="col-md-12 mb-10 text-center order-7">
+            <!-- Bootstrap buttons for navigation -->
+            <a class="btn btn-primary mr-2" href="anni.html">Previous</a>
+            <a class="btn btn-primary" href="gallery.html">Next</a>
+        </div>
+    </div>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+        $(document).ready(function () {
+          var mySwiper = new Swiper(".swiper", {
+            autoHeight: true,
+            autoplay: {
+              delay: 8000,
+              disableOnInteraction: false
+            },
+            speed: 300,
+            direction: "horizontal",
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev"
+            },
+            pagination: {
+              el: ".swiper-pagination",
+              type: "progressbar"
+            },
+            loop: false,
+            effect: "slide",
+            spaceBetween: 30,
+            on: {
+              init: function () {
+                $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
+                $(".swiper-pagination-custom .swiper-pagination-switch").eq(0).addClass("active");
+                $(".swiper-slide").eq(0).find(".title").css({ opacity: 1, transform: "translateY(0)" });
+              },
+              slideChangeTransitionStart: function () {
+                $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
+                $(".swiper-pagination-custom .swiper-pagination-switch").eq(mySwiper.realIndex).addClass("active");
+                $(".swiper-slide .title").css({ opacity: 0, transform: "translateY(20px)" });
+              },
+              slideChangeTransitionEnd: function () {
+                $(".swiper-slide-active .title").css({ opacity: 1, transform: "translateY(0)" });
+              }
+            }
+          });
+          $(".swiper-pagination-custom .swiper-pagination-switch").click(function () {
+            mySwiper.slideTo($(this).index());
+            $(".swiper-pagination-custom .swiper-pagination-switch").removeClass("active");
+            $(this).addClass("active");
+          });
+        });
+      </script>
+
+</body>
+</html>

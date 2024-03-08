@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Welcome Love</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="LP/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="LP/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="LP/favicon-16x16.png">
+  <link rel="manifest" href="LP/site.webmanifest">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: url('imgs/cute-heart.gif') center no-repeat fixed; /* Replace 'your-image-url.jpg' with your actual image URL */ 
+       }
+
+    #image-container {
+      position: relative;
+      text-align: center;
+    }
+
+    .fade-in-out {
+      animation: fadeInOut 10s infinite;
+      opacity: 0;
+      max-height: 200px; /* Adjust the height as needed */
+    }
+
+    @keyframes fadeInOut {
+      0%, 100% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div id="image-container" class="container">
+  <div class="row justify-content-center text-center">
+    <div class="col-md-3 col-sm-6 mx-auto">
+      <img src="imgs/start1.jpg" alt="Image 1" class="img-fluid fade-in-out">
+    </div>
+    <div class="col-md-3 col-sm-6 mx-auto">
+      <img src="imgs/happy.jpg" alt="Image 2" class="img-fluid fade-in-out">
+    </div>
+    <div class="col-md-3 col-sm-6 mx-auto">
+      <img src="imgs/Anniversary.jpg" alt="Image 3" class="img-fluid fade-in-out">
+    </div>
+    <div class="col-md-3 col-sm-6 mx-auto">
+      <img src="imgs/start2.webp" alt="Image 4" class="img-fluid fade-in-out">
+    </div>
+  </div>
+  <a href="timeline.html" class="btn btn-primary mt-3">Click Me</a>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
